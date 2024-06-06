@@ -1,40 +1,131 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+### README.md
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Tic Tac Toe
+
+Tic Tac Toe is a classic two-player game implemented using React, Redux, and Tailwind CSS. This version features a pyramid-shaped board.
+
+Visit [this](https://special-tic-tac-toe.vercel.app) website for a deployed demonstration
+
+## File Structure
+
+```plaintext
+TIC-TAC-TOE/
+│
+├── __tests__/
+│   ├── Grid.test.js
+│   ├── Header.test.js
+│
+├── .next/
+├── .swc/
+├── components/
+│   ├── GenerateStars.js
+│   ├── Grid.js
+│   ├── Header.js
+│   ├── Stars.js
+│
+├── node_modules/
+│
+├── pages/
+│   ├── api/
+│   ├── _app.js
+│   ├── _document.js
+│   ├── index.js
+│
+├── public/
+│
+├── store/
+│   ├── darkMode.js
+│   ├── index.js
+│
+├── styles/
+│
+├── .eslintrc.json
+├── .gitignore
+├── jest.config.js
+├── jest.setup.js
+├── jsconfig.json
+├── next.config.mjs
+├── package.json
+├── postcss.config.mjs
+├── README.md
+├── tailwind.config.js
+├── yarn.lock
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Installation
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/tic-tac-toe.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd tic-tac-toe
+   ```
+3. Install dependencies:
+   ```bash
+   yarn install
+   ```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## Running the Application
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+1. Start the development server:
+   ```bash
+   yarn dev
+   ```
+2. Open your browser and navigate to `http://localhost:3000`.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Running Tests
 
-## Learn More
+1. To run the tests, use:
+   ```bash
+   jest
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+## Game Rules
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- The game is played on a pyramid-shaped board with 9 cells.
+- Players take turns to place their marker (either 'O' or 'X') in an empty cell.
+- The first player to get three of their markers in a row (horizontally, vertically, or diagonally) wins.
+- If all 9 cells are filled and no player has three in a row, the game is a draw.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Components
 
-## Deploy on Vercel
+### `Grid.js`
+- The main game component that handles the game logic and rendering of the grid.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### `Header.js`
+- The header component that displays the game title and a dark mode toggle button.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### `GenerateStars.js` & `Stars.js`
+- Components related to visual enhancements (optional for game functionality).
+
+## Tests
+
+- `Grid.test.js`: Contains tests for the game logic and winning conditions.
+- `Header.test.js`: Contains tests for the header component.
+
+## Store
+
+### `darkMode.js`
+- Redux slice to handle dark mode state.
+
+### `index.js`
+- Combines the Redux reducers and configures the store.
+
+## Configuration Files
+
+- `.eslintrc.json`: ESLint configuration.
+- `jest.config.js`: Jest configuration for running tests.
+- `jest.setup.js`: Setup file for Jest.
+- `jsconfig.json`: Configuration for JavaScript.
+- `next.config.mjs`: Next.js configuration.
+- `postcss.config.mjs`: PostCSS configuration.
+- `tailwind.config.js`: Tailwind CSS configuration.
+
+## License
+
+This project is licensed under the MIT License.
+
