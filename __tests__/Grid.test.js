@@ -237,7 +237,7 @@ describe('Grid Component', () => {
     fireEvent.click(cells[6]); // X
     fireEvent.click(cells[8]); // O - Draw
 
-    expect(screen.getByText('Game drawn')).toBeInTheDocument();
+    expect(screen.getByText('Game Drawn')).toBeInTheDocument();
 
     // Try clicking other cells after draw
     fireEvent.click(cells[5]);
