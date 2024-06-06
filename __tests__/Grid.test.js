@@ -278,10 +278,11 @@ describe('Grid Component', () => {
     fireEvent.click(cells[0]); // O
     fireEvent.click(cells[1]); // X
     fireEvent.click(screen.getByText("Undo"))
+    fireEvent.click(screen.getByText("Undo"))
 
     fireEvent.click(cells[2])
 
-    expect(cells[2]).toHaveTextContent('X')
+    expect(cells[2]).toHaveTextContent('O')
 
 
     

@@ -9,15 +9,12 @@ function Grid() {
   const [cells, setCells] = useState(Array(9).fill(null));
   const [winner, setWinner] = useState(null);
 
-  const [moves, setMoves] = useState([])
-
-
+  const [moves, setMoves] = useState([]);
 
   const handleClick = (index) => {
     if (draw) {
       alert("Game drawn, Press Reset to play again");
-    }
-    else if (winner) {
+    } else if (winner) {
       alert(winner + " Press Reset to play again");
       return;
     }
@@ -36,9 +33,9 @@ function Grid() {
       }
       if (checkDraw(newCell) && !winner) {
         setDraw("Game drawn");
-        return
+        return;
       }
-      setMoves([...moves,index])
+      setMoves([...moves, index]);
       const nextShape = shape == "O" ? "X" : "O";
       setShape(nextShape);
     }
@@ -59,7 +56,7 @@ function Grid() {
   };
 
   const checkWinner = (cells) => {
-    // we have all the winning conditions so if 
+    // we have all the winning conditions so if
     // it fulfils any of thw winning conditions
     // we set winner to be true
     const winningConditions = [
@@ -93,14 +90,22 @@ function Grid() {
   };
 
   const undo = () => {
-    const curMoves = moves.slice()
-    const curCells = cells.slice()
-    let index = curMoves.pop()
-    let poppedShape = curCells[index]
-    curCells[index]= null
-    setCells(curCells)
-    setShape(poppedShape)
-  }
+    if (draw) {
+      alert("Game drawn, Press Reset to play again");
+      return
+    } else if (winner) {
+      alert(winner + " Press Reset to play again");
+      return;
+    }
+    const curMoves = moves.slice();
+    const curCells = cells.slice();
+    let index = curMoves.pop();
+    let poppedShape = curCells[index];
+    curCells[index] = null;
+    setCells(curCells);
+    setShape(poppedShape);
+    setMoves(curMoves)
+  };
 
   return (
     <div className="flex flex-col items-center mt-[120px]">
