@@ -4,7 +4,6 @@ import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
 import Grid from '../components/Grid';
 
-// Mock the `changeShape` action
 const mockStore = configureStore([]);
 
 beforeAll(() => {

@@ -32,7 +32,7 @@ function Grid() {
         return;
       }
       if (checkDraw(newCell) && !winner) {
-        setDraw("Game drawn");
+        setDraw("Game Drawn");
         return;
       }
       setMoves([...moves, index]);
