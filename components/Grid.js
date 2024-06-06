@@ -80,6 +80,7 @@ function Grid() {
   };
 
   const resetCells = () => {
+    setShape("O")
     setWinner(null);
     setCells([]);
     setDraw("");
