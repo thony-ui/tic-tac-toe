@@ -27,7 +27,7 @@ function GenerateStars() {
 
       
   return (
-    <div>{stars}</div>
+    <div className='z-[-1]'>{stars}</div>
   )
 }
 

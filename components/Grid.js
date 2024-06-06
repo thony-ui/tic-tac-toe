@@ -98,6 +98,9 @@ function Grid() {
       alert(winner + " Press Reset to play again");
       return;
     }
+    if (moves.length == 0) {
+      return
+    }
     const curMoves = moves.slice();
     const curCells = cells.slice();
     let index = curMoves.pop();
