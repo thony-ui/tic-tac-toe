@@ -41,7 +41,7 @@ describe('Header Component', () => {
     );
 
     // Mock initial state to be light mode
-    initialState = { darkMode: { value: false } };
+    initialState = { darkMode: { value: true } };
     store = mockStore(initialState);
 
     // Check for the moon icon to be present (light mode)

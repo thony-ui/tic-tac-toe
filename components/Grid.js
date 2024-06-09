@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
+import MLComponent from "./MLComponent";
 
 function Grid() {
+  
   // main logic
   const darkMode = useSelector((state) => state.darkMode.value);
   const [shape, setShape] = useState("O");
@@ -80,7 +82,7 @@ function Grid() {
   };
 
   const resetCells = () => {
-    setShape("O")
+    setShape("O");
     setWinner(null);
     setCells([]);
     setDraw("");
@@ -93,13 +95,13 @@ function Grid() {
   const undo = () => {
     if (draw) {
       alert("Game drawn, Press Reset to play again");
-      return
+      return;
     } else if (winner) {
       alert(winner + " Press Reset to play again");
       return;
     }
     if (moves.length == 0) {
-      return
+      return;
     }
     const curMoves = moves.slice();
     const curCells = cells.slice();
@@ -108,8 +110,17 @@ function Grid() {
     curCells[index] = null;
     setCells(curCells);
     setShape(poppedShape);
-    setMoves(curMoves)
+    setMoves(curMoves);
   };
+
+  // array that stores the popped index
+  // movesARR = [1,2,3]
+  // movesArr = [1,2]
+  // resetARR = [3]
+  // pop from the resetARR
+  // movesArr.append(poppped value)
+  // CurCells[poped value] = poppedShape
+  // setCells(curCells)
 
   return (
     <div className="flex flex-col items-center mt-[120px]">
@@ -188,6 +199,7 @@ function Grid() {
       >
         Undo
       </button>
+        <MLComponent />
     </div>
   );
 }

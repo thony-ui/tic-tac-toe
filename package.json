@@ -2,6 +2,7 @@
   "name": "tic-tac-toe",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -12,7 +13,10 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.5",
+    "@tensorflow/tfjs": "^4.20.0",
     "@testing-library/dom": "^10.1.0",
+    "fs": "^0.0.1-security",
+    "ml-classifier": "^0.5.1",
     "next": "14.2.3",
     "react": "^18",
     "react-dom": "^18",
